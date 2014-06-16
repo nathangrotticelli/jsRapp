@@ -53,9 +53,14 @@ angular.module('starter', ['ionic', 'ngTouch', 'ionic.contrib.ui.cards'])
     // { title: 'Swipe down to clear the card', image: 'img/pic.png' },
     { title: 'What is Javascript?', level:'Beginner',num:'0'},
     { title: 'What is JQuery?', level:'Beginner',num:'1'},
-    { title: 'What beach is this?',level:'Advanced', num:'2'},
-    { title: 'What kind of clouds are these?', level:'Intermediate', num:'3'},
-     { title: 'Looks like your out of cards!',level:'End', num:'4'}
+     { title: 'What is 3333?', level:'Beginner',num:'2'},
+    { title: 'Intermediate1 are these?', level:'Intermediate', num:'3'},
+     { title: 'Intermediate2 are these?', level:'Intermediate', num:'4'},
+      { title: 'Intermediate3?', level:'Intermediate', num:'5'},
+       { title: 'What Advanced1 is this?',level:'Advanced', num:'6'},
+        { title: 'What Advanced2 is this?',level:'Advanced', num:'7'},
+         { title: 'What Advanced3 is this?',level:'Advanced', num:'8'},
+     { title: 'Looks like your out of cards!',level:'End', num:'9'}
   ];
   $scope.tags = [
 {
@@ -72,66 +77,66 @@ angular.module('starter', ['ionic', 'ngTouch', 'ionic.contrib.ui.cards'])
 }];
 
 
-  $scope.cardCheck = function(card){
-    // counter++;
-    // alert(card.title);
+//   $scope.cardCheck = function(card){
+//     // counter++;
+//     // alert(card.title);
 
-// alert($scope.tags[0].checked);
-// var cardNumbers = 0;
- if(card.level == "Beginner"&&$scope.tags[0].checked!=true) {
+// // alert($scope.tags[0].checked);
+// // var cardNumbers = 0;
+//  if(card.level == "Beginner"&&$scope.tags[0].checked!=true) {
 
-//
-          // alert('hi');
-          pleaseT = card.num +=1;
-          $scope.addCard(pleaseT);
-           // alert('ad card saved');
-
-
-
-
-      }
-      else if(card.level == "Intermediate"&&$scope.tags[1].checked!=true) {
-//         // alert("")
-
-           pleaseT = card.num +=1;
-          $scope.addCard(pleaseT);
-           // alert('ad card saved');
-
-
-
-      }
-    else if(card.level == "Advanced"&&$scope.tags[2].checked!=true) {
-//         // alert("")
-
-          pleaseT = card.num +=1;
-          $scope.addCard(pleaseT);
-          // alert('here');
-           // $scope.addCard(2);
-           // alert('ad card saved');
+// //
+//           // alert('hi');
+//           pleaseT = card.num +=1;
+//           $scope.addCard(pleaseT);
+//            // alert('ad card saved');
 
 
 
 
-      }
-      else{
-        // $scope.cardSwiped(4);
-        // counter = counter++;
-        // alert(counter);
-        // alert(card.num);
-        // flip('left');
-         $scope.turnedOver=false;
-        // alert(cardNum);
-        if (cardNum==-1){
-          // cardNum=0;
-          // cardNum++;
-        }
-        // alert(cardNum);
-       $scope.addCard(cardNum);
-         // var newCard = cardTypes[0];
-         // $scope.cards.push(angular.extend({}, newCard));
-      }
+//       }
+//       else if(card.level == "Intermediate"&&$scope.tags[1].checked!=true) {
+// //         // alert("")
 
-  };
+//            pleaseT = card.num +=1;
+//           $scope.addCard(pleaseT);
+//            // alert('ad card saved');
+
+
+
+//       }
+//     else if(card.level == "Advanced"&&$scope.tags[2].checked!=true) {
+// //         // alert("")
+
+//           pleaseT = card.num +=1;
+//           $scope.addCard(pleaseT);
+//           // alert('here');
+//            // $scope.addCard(2);
+//            // alert('ad card saved');
+
+
+
+
+//       }
+//       else{
+//         // $scope.cardSwiped(4);
+//         // counter = counter++;
+//         // alert(counter);
+//         // alert(card.num);
+//         // flip('left');
+//          $scope.turnedOver=false;
+//         // alert(cardNum);
+//         if (cardNum==-1){
+//           // cardNum=0;
+//           // cardNum++;
+//         }
+//         // alert(cardNum);
+//        $scope.addCard(cardNum);
+//          // var newCard = cardTypes[0];
+//          // $scope.cards.push(angular.extend({}, newCard));
+//       }
+
+//   };
   // $scope.isChecked = true;
    // $scope.pushNotification = { checked: true };
 // $scope.displayB = false;
@@ -204,7 +209,7 @@ angular.module('starter', ['ionic', 'ngTouch', 'ionic.contrib.ui.cards'])
 
   $scope.cards = Array.prototype.slice.call(cardTypes, 0, 0);
 
-var cardNum=-1;
+$scope.cardNum=-1;
 $scope.flipped=0;
   $scope.cardSwiped = function(index) {
     // alert
@@ -212,7 +217,7 @@ $scope.flipped=0;
     // alert(cardNum);
 // alert( $scope.flipped);
 
-    if(cardNum==-1){
+    if($scope.cardNum==-1){
       // alert($scope.flipped);
       // alert($scope.flipped);
       if($scope.flipped==0&&$scope.tags[0].checked){
@@ -221,7 +226,7 @@ $scope.flipped=0;
 
         $scope.turnedOver=false;
         // alert(cardNum);
-        cardNum=0;
+        $scope.cardNum=0;
         // alert(cardNum);
        $scope.addCard(0);
        // $scope.flipped=0;
@@ -256,9 +261,10 @@ $scope.flipped=0;
         $scope.turnedOver=false;
 
         // alert(cardNum);
-        cardNum++;
+        $scope.cardNum++;
         // alert(cardNum);
-       $scope.addCard(cardNum);
+        // alert(cardNum);
+       $scope.addCard($scope.cardNum);
 
 
        // $scope.flipped=0;
@@ -266,7 +272,7 @@ $scope.flipped=0;
       else{
         // alert('her2222e');
         // $scope.flipped=0;
-       $scope.addCard(cardNum);
+       $scope.addCard($scope.cardNum);
        $scope.flipped=0;
 
 
@@ -386,6 +392,10 @@ $scope.turnedOver=false;
          var newCard = cardTypes[cardNum];
          // $scope.flipped=0;
       }
+      // alert(cardNum);
+      // alert($scope.cardNum);
+
+      // alert(cardNum);
 
     // newCard.id = Math.random();
     // var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
@@ -397,32 +407,48 @@ $scope.turnedOver=false;
 
 
     $scope.cards.push(angular.extend({}, newCard));
-
-    if(cardNum>4){
-      $scope.addCard(4);
+    starter=true;
+if(starter){
+  cardLimit=9;
+}
+    if(cardNum>cardLimit){
+      $scope.cards.pop(angular.extend({}, newCard));
+      $scope.addCard(cardLimit);
     }
     else if($scope.tags[0].checked!=true&&cardTypes[cardNum].level=="Beginner"){
       // alert(cardNum);
+      // $scope.cards.splice(index, cardNum);
+      $scope.cards.pop(angular.extend({}, newCard));
       cardNum++;
       // alert(cardNum);
-        // alert(cardNum);
+
        $scope.addCard(cardNum);
+        // $scope.cards.splice(index, cardNum);
     }
     else if($scope.tags[1].checked!=true&&cardTypes[cardNum].level=="Intermediate"){
-      // alert(cardNum);
+     // $scope.cards.splice(index, cardNum);
+      $scope.cards.pop(angular.extend({}, newCard));
       cardNum++;
       // alert(cardNum);
         // alert(cardNum);
+
        $scope.addCard(cardNum);
+        // $scope.cards.splice(index, cardNum);
     }
     else if($scope.tags[2].checked!=true&&cardTypes[cardNum].level=="Advanced"){
+      // $scope.cards.splice(index, cardNum);
+       $scope.cards.pop(angular.extend({}, newCard));
       cardNum++;
         // alert(cardNum);
+
        $scope.addCard(cardNum);
-    }
-    else if(cardTypes[cardNum].level=="End"){
 
     }
+    else{
+      $scope.cardNum = cardNum;
+    }
+
+
 
 }
 })

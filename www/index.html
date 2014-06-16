@@ -50,7 +50,7 @@
         <swipe-card on-swipe="cardSwiped()" id="start-card">
           Swipe down for a new card
         </swipe-card>
-        <swipe-card  ng-repeat="card in cards" on-destroy="cardDestroyed($index)"  ng-model="turnedOver"  ng-swipe-right="flip('left')"  ng-swipe-left="flip('right')" on-swipe="cardSwiped($index)">
+        <swipe-card  ng-repeat="card in cards" on-destroy="cardDestroyed($index)"  ng-model="turnedOver"  ng-swipe-right="flip('left')"  ng-swipe-left="flip('right')" on-swipe="cardSwiped('fake')">
           <div>
             <h1 ng-if="turnedOver!=true" class="title">
               {{card.title}}
