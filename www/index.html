@@ -54,21 +54,22 @@
           <div>
             <h1 ng-if="turnedOver!=true" class="title">
               {{card.title}}
+              <button ng-if="card.level=='End'" ng-click="backToTop()">
+                Back to the Top
+              </button>
 
 
 
             </h1>
 
  <div ng-if="turnedOver" class="animate-if">
-              <div ng-if="tags[0].checked">
+              <div>
                <h1>{{card.level}}</h1>
+               <p>Tags: History, Basics, Definitions
+               <h1>Short Answer:</h1>
+               <h1>Long Answer:</h1>
              </div>
-             <div ng-if="tags[1].checked">
-               <h1>{{card.level}}</h1>
-             </div>
-             <div ng-if="tags[2].checked">
-               <h1>{{card.level}}</h1>
-             </div>
+
 
 
               <button ng-click="ale()">button</button>
@@ -103,16 +104,26 @@
 
 
 
+     <toggle ng-repeat="tag in tags" ng-model="checked4"   ng-click="tags[tag.num].checked=!tags[tag.num].checked">
 
+     {{tag.text}}
+     {{tag.checked}}
 
+     </toggle>
 
-
-     <toggle ng-repeat="tag in tags" ng-model="tag.checked">{{tag.text}}
-     {{tag.checked}}</toggle>
+     <toggle ng-click="random.is=!random.is">Random?
+     {{random.is}}</toggle>
 
      <h1>Tags</h1>
+     <select ng-model="filter2.tag" >
+  <option value="Definitions">Definitions</option>
+  <option value="History">History</option>
+  <option value="Basics">Basics</option>
+  <option value="Random">Random</option>
+</select>
+
      <br><br>
-     <button>Shuffle</button>
+
 
 
     </ion-content>
@@ -120,8 +131,10 @@
   </div>
 
 </script>
-      </swipe-cards>
+
 <script id="company.html" type="text/ng-template">
+
+
 
   <div class="modal">
 
@@ -133,6 +146,7 @@
 
     <!-- Modal content area -->
     <ion-content>
+
 
       <form ng-submit="createTask(task)">
         <div class="list">
@@ -148,8 +162,21 @@
     </ion-content>
 
   </div>
+  <script type="text/javascript">
+
+
+
+
+
+
+
+
+
+
+  {{html "</sc"+"ript>"}}
 
 </script>
+
     </pane>
   </body>
 </html>

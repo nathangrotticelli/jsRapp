@@ -26,7 +26,7 @@
 .topBtn{
   position: absolute;
   z-index: 99;
-  color:black;
+  color:white;
   /*background-color: white;*/
   font-size: 40px;
   left:5%;
@@ -35,7 +35,7 @@
 }
 .topBtn2{
   z-index: 99;
-  color:black;
+  color:white;
   position: absolute;
   /*background-color: white;*/
   font-size: 40px;
